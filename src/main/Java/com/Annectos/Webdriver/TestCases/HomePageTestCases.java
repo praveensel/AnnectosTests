@@ -1,4 +1,4 @@
-package SeepTestCases;
+package com.Annectos.Webdriver.TestCases;
 
 import com.Annectos.Webdriver.Common.Staticprovider;
 import com.Annectos.Webdriver.Common.Testbase;
@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 
 /**
  * Created with IntelliJ IDEA.
- * User: praveen
- * Date: 6/24/14
- * Time: 12:30 PM
+ * User: QA-002
+ * Date: 1/28/14
+ * Time: 5:56 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SeepLoginPageCases extends Testbase {
+public class HomePageTestCases extends Testbase {
 
     @Test(dataProviderClass = Staticprovider.class, dataProvider = "WiproLoginplusLogProvider")
     public void LoginAndCheckLogo(String email, String Password,String LogoPath) throws Exception {

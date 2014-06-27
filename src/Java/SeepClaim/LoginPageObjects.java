@@ -9,11 +9,9 @@ package SeepClaim;
  */
 
 import com.Annectos.Webdriver.Common.CommonMethods;
-import com.sun.corba.se.impl.logging.InterceptorsSystemException;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPageObjects extends CommonMethods {
@@ -27,7 +25,7 @@ public class LoginPageObjects extends CommonMethods {
     @FindBy(xpath = "//input[@type='submit' and @value='Submit']")
     public WebElement submit;
 
-    @FindBy(partialLinkText = "HOME")
+    @FindBy(partialLinkText = "Home")
     public  WebElement elmHomeMenu;
 
     @FindBy(partialLinkText = "PROFILE")
@@ -39,13 +37,13 @@ public class LoginPageObjects extends CommonMethods {
     @FindBy(partialLinkText = "CLAIM ENTRY")
     public  WebElement elmCLAIMENTRYMenu;
 
-    @FindBy(partialLinkText = "MY CLAIMS")
+    @FindBy(partialLinkText = "MYCLAIMS")
     public  WebElement elmMYCLAIMSMenu;
 
     @FindBy(partialLinkText = "REDEMPTION")
     public  WebElement elMREDEMPTIONMenu;
 
-    @FindBy(partialLinkText = "REWARD GALLERY")
+    @FindBy(partialLinkText = "Reward Gallery")
     public  WebElement elmREWARDMenu;
 
     @FindBy(partialLinkText = "CONTACT")
@@ -61,7 +59,6 @@ public class LoginPageObjects extends CommonMethods {
     public  WebElement elmLOGOUTMenu;
 
     public LoginPageObjects(WebDriver adriver) {
-
         super(adriver);
         driver = adriver;
         wait = new WebDriverWait(driver, timeOut);
@@ -69,86 +66,24 @@ public class LoginPageObjects extends CommonMethods {
 
     }
 
-    public void OpenURl()
-    {
-        driver.navigate().to(baseURL);
-    }
-
     public void checkAllMenus()
     {
-        assertElementPresent(registeredEMail);
-        assertElementPresent(password);
-        assertElementPresent(submit);
-        assertElementPresent(elmHomeMenu);
-        assertElementPresent(elmPROFILEMenu);
-        assertElementPresent(elmSEEPMenu);
-        assertElementPresent(elmCLAIMENTRYMenu);
-        assertElementPresent(elmMYCLAIMSMenu);
-        assertElementPresent(elmREWARDMenu);
-        assertElementPresent(elmPROFILEMenu);
-        assertElementPresent(elmCONTACTMenu);
-        assertElementPresent(elmSPECIALMenu);
-        assertElementPresent(elmCHNGPWDMenu);
-        assertElementPresent(elmLOGOUTMenu);
-
-
-
-    }
-
-    public void TypeUsername(String email)
-    {
         waitforElementtoLoad(registeredEMail);
-        SetText(registeredEMail,email);
-    }
-
-    public void TypePassword(String Password)
-    {
         waitforElementtoLoad(password);
-        SetText(password,Password);
-    }
-
-    public void click_submit_button()
-    {
-        WaitforElementToLoadAndClick(submit);
-
-
-    }
-
-    public void Logout()
-    {
-        WaitforElementToLoadAndClick(elmLOGOUTMenu);
-    }
-
-    public void Profile()
-    {
-        WaitforElementToLoadAndClick(elmPROFILEMenu);
-    }
-
-
-    public void Login_without_passowrd(String email)
-    {
-        TypeUsername(email);
-        click_submit_button();
-        waitForAlertAndAccept("Sorry - your credentials don't match with what we have in file");
-    }
-
-    public void Login_without_email(String password)
-    {
-        TypePassword(password);
-        click_submit_button();
-        waitForAlertAndAccept("Sorry - your credentials don't match with what we have in file");
-    }
-
-    public void Login_with_both_Email_and_Password(String email,String Password) throws InterruptedException {
-        TypeUsername(email);
-        TypePassword(Password);
-        click_submit_button();
-        waitForAlertAndAccept("Login Successful. Now you will be redirected to home page ...");
-
+        waitforElementtoLoad(submit);
+        waitforElementtoLoad(elmHomeMenu);
+        waitforElementtoLoad(elmPROFILEMenu);
+        waitforElementtoLoad(elmSEEPMenu);
+        waitforElementtoLoad(elmCLAIMENTRYMenu);
+        waitforElementtoLoad(elmMYCLAIMSMenu);
+        waitforElementtoLoad(elmREWARDMenu);
+        waitforElementtoLoad(elmPROFILEMenu);
+        waitforElementtoLoad(elmCONTACTMenu);
+        waitforElementtoLoad(elmSPECIALMenu);
+        waitforElementtoLoad(elmCHNGPWDMenu);
+        waitforElementtoLoad(elmLOGOUTMenu);
 
     }
-
-
 
 
 }

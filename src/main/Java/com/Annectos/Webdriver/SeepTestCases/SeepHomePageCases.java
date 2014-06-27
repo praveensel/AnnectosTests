@@ -1,6 +1,7 @@
-package SeepTestCases;
+package com.Annectos.Webdriver.SeepTestCases;
 
-import SeepClaim.SeepHomePageObjects;
+import com.Annectos.Webdriver.SeepClaim.LoginPageObjects;
+import com.Annectos.Webdriver.SeepClaim.SeepHomePageObjects;
 import com.Annectos.Webdriver.Common.Staticprovider;
 import com.Annectos.Webdriver.Common.Testbase;
 import org.openqa.selenium.support.PageFactory;
@@ -23,8 +24,8 @@ public class SeepHomePageCases extends Testbase {
         {
             findRemoteip(threadDriver.get());
         }
-        SeepHomePageObjects seepHomePageObjects= PageFactory.initElements(getDriver(), SeepClaim.SeepHomePageObjects.class);
-        SeepClaim.LoginPageObjects seepLoginpgobj=PageFactory.initElements(getDriver(),SeepClaim.LoginPageObjects.class);
+        SeepHomePageObjects seepHomePageObjects= PageFactory.initElements(getDriver(), SeepHomePageObjects.class);
+        LoginPageObjects seepLoginpgobj=PageFactory.initElements(getDriver(),LoginPageObjects.class);
         seepLoginpgobj.OpenURl();
         seepLoginpgobj.Login_with_both_Email_and_Password(email,Password);
         seepHomePageObjects.checkAllMenus();

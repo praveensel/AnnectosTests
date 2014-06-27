@@ -1,7 +1,9 @@
-package SeepTestCases;
+package com.Annectos.Webdriver.SeepTestCases;
 
 import com.Annectos.Webdriver.Common.Staticprovider;
 import com.Annectos.Webdriver.Common.Testbase;
+import com.Annectos.Webdriver.SeepClaim.LoginPageObjects;
+import com.Annectos.Webdriver.SeepClaim.ProfilePageObject;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -23,8 +25,8 @@ public class SeepProfilePageCases extends Testbase{
             //findRemoteip(threadDriver.get());
         }
         {
-            SeepClaim.LoginPageObjects seepLoginpgobj= PageFactory.initElements(getDriver(), SeepClaim.LoginPageObjects.class);
-            SeepClaim.ProfilePageObject profilePageObject=PageFactory.initElements(getDriver(),SeepClaim.ProfilePageObject.class);
+            LoginPageObjects seepLoginpgobj= PageFactory.initElements(getDriver(), LoginPageObjects.class);
+            ProfilePageObject profilePageObject=PageFactory.initElements(getDriver(),ProfilePageObject.class);
             seepLoginpgobj.OpenURl();
             seepLoginpgobj.Login_with_both_Email_and_Password(email,Password);
             seepLoginpgobj.Profile();
@@ -39,15 +41,17 @@ public class SeepProfilePageCases extends Testbase{
     {
         if(threadDriver!=null)
         {
+           System.out.print("Insi");
             //findRemoteip(threadDriver.get());
         }
         {
-            SeepClaim.LoginPageObjects seepLoginpgobj= PageFactory.initElements(getDriver(), SeepClaim.LoginPageObjects.class);
-           SeepClaim.ProfilePageObject profilePageObject=PageFactory.initElements(getDriver(),SeepClaim.ProfilePageObject.class);
+            LoginPageObjects seepLoginpgobj= PageFactory.initElements(getDriver(), LoginPageObjects.class);
+           ProfilePageObject profilePageObject=PageFactory.initElements(getDriver(),ProfilePageObject.class);
             seepLoginpgobj.OpenURl();
             seepLoginpgobj.Login_with_both_Email_and_Password(email,Password);
             seepLoginpgobj.Profile();
             profilePageObject.Save_profile_without_First_name(Firstname,LastName,MobileNo,DOB,CFD,Education);
+            seepLoginpgobj.Logout();
 
         }
     }

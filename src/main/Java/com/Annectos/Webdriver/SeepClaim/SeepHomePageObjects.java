@@ -1,4 +1,4 @@
-package SeepClaim;
+package com.Annectos.Webdriver.SeepClaim;
 
 import com.Annectos.Webdriver.Common.CommonMethods;
 import org.openqa.selenium.WebDriver;
